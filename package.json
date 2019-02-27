@@ -1,0 +1,16 @@
+{
+  "name": "webhook-echo-sample",
+  "version": "1.0.0",
+  "description": "Webhook echo sample",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "Viswa",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "deasync": "^0.1.14",
+    "express": "^4.13.4",
+    "request": "^2.88.0"
+  }
+}
