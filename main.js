@@ -37,8 +37,8 @@ restService.post("/weather", function(req, res) {
   if (!req.body) 
       return res.sendStatus(400);
   res.setHeader('Content-Type','application/json');
-  console.log("Geocity input recieved:"+req.query.geocity);   
-      var city =req.query.geocity;      
+  console.log("Geocity input recieved:"+req.query.city);   
+      var city =req.query.city;      
       
       var url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+'&units=metric&appid='+apiKey;
       console.log('The Url is '+url);
