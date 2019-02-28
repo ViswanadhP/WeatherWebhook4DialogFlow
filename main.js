@@ -39,7 +39,7 @@ restService.post("/weather", function(req, res) {
   req.body.result.parameters &&
   req.body.result.parameters.cityName
     ? req.body.result.parameters.cityName
-    : "Seems like some problem. please try with some city name.";
+    : "Delhi";
   if (!req.body) 
       return res.sendStatus(400);
   res.setHeader('Content-Type','application/json');
