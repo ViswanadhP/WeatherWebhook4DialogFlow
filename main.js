@@ -62,7 +62,8 @@ restService.post("/weather", function(req, res) {
           console.log('cb body:'+body);     
           w= message;
       
-      //var w = getWeather(city);
+      /*
+          //var w = getWeather(city);
       console.log('w: '+weather.main.temp);
       let response = ""; //Default response from webhook to show its working
     
@@ -71,18 +72,23 @@ restService.post("/weather", function(req, res) {
           ,"fulfillmentMessages":[{"text":{"text": [w] }}]
           ,"source":""
       };
-  return res.json(responseObj);   
+  return res.json(responseObj);  
+  */
+  return res.json({
+    speech: w,
+    displayText: w,
+    source: "webhook-weather-sample"
+  });
+  
 }
 });
   /*
   //new code
   const request = require('request');
 const argv = require('yargs').argv;
-
 let apiKey = '*****************************';
 let city = argv.c || 'portland';
 let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
-
 request(url, function (err, response, body) {
   if(err){
     console.log('error:', error);
