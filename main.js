@@ -34,16 +34,19 @@ restService.post("/echo", function(req, res) {
 
 restService.post("/weather", function(req, res) {
   console.log('recieved a post request for weather');
+  var city =
+  req.body.result &&
+  req.body.result.parameters &&
+  req.body.result.parameters.city
+    ? req.body.result.parameters.city
+    : "Seems like some problem. please try with some city name.";
   if (!req.body) 
       return res.sendStatus(400);
   res.setHeader('Content-Type','application/json');
-  console.log("Geocity input recieved:"+req.query.city);   
-      var city =req.query.city;     
-     if (city=='')
-      {
-      let city='Hyderabad'
-      }
-      
+  console.log("Geocity input recieved:"+city);   
+  if (!req.body) 
+      return res.sendStatus(400);
+  res.setHeader('Content-Type','application/json');       
       var url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+'&units=metric&appid='+apiKey;
       console.log('The Url is '+url);
       var w='';
