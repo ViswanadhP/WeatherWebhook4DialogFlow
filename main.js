@@ -55,7 +55,8 @@ restService.post("/weather", function(req, res) {
           console.log('cb error:', error);
         } else {
           let weather = JSON.parse(body)
-          let message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+          //let message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+          let message = `It's ${weather.main.temp} degrees with ${weather.weather[0].description} and humidity: ${weather.main.humidity} in ${weather.name}!`;
           console.log('cb:'+message);
           console.log('cb weather:'+weather.main.temp);
           //console.log('cb response:'+response);
