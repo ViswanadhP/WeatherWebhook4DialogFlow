@@ -37,8 +37,8 @@ restService.post("/weather", function(req, res) {
   var city =
   req.body.result &&
   req.body.result.parameters &&
-  req.body.result.parameters.city
-    ? req.body.result.parameters.city
+  req.body.result.parameters.cityName
+    ? req.body.result.parameters.cityName
     : "Seems like some problem. please try with some city name.";
   if (!req.body) 
       return res.sendStatus(400);
