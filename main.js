@@ -39,9 +39,15 @@ restService.post("/weather", function(req, res) {
   req.body.result.parameters &&
   req.body.result.parameters.cityName
     ? req.body.result.parameters.cityName
-    : "Delhi";
+    : "UnknownCity";
   if (!req.body) 
       return res.sendStatus(400);
+  if (city=="UnknownCity") 
+      return res.json({
+        speech: 'UnknownCity :( Please check the spelling',
+        displayText: 'UnknownCity :( Please check the spelling',
+        source: "webhook-weather-sample"
+      });
   res.setHeader('Content-Type','application/json');
   console.log("Geocity input recieved:"+city);   
   if (!req.body) 
